@@ -1,8 +1,9 @@
 #include <stdio.h>
 
 /**
- *  Basically writing a program that prints a message 
- *  using puts instead of printf
+ * main - prints a line using the puts function.
+ * 
+ * Return: 0
  */
 
 int main(void)
