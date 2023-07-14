@@ -3,9 +3,9 @@
 #include <stdlib.h>
 
 /**
- * main - using if else statements
+ * main - entry for if else statements
  *
- * Return 0
+ * Return: 0
  */
 
 int main(void)
