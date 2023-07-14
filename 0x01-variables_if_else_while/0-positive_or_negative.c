@@ -10,11 +10,13 @@
 
 int main(void)
 {
-	int n
+	int n;
 
+	/* Your source code */
 	srand(time(0));
 	n = rand() - RAND_MAX / 2;
 
+	/* My source code */
 	if (n < 0)
 		printf("%i is negative\n");
 	else if (n == 0)
