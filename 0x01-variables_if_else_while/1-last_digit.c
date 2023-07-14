@@ -10,7 +10,7 @@
 
 int main(void)
 {
-	int n;
+	int m, n;
 
 	/* Your source code */
 	srand(time(0));
@@ -18,7 +18,7 @@ int main(void)
 
 	/* My source code */
 	    /* This will get the last digit (m) */
-	int m = n % 10;
+	 m = n % 10;
 
 	if (m > 5)
 		printf("Last digit of %i is %i and is greater than 5\n", n, m);
