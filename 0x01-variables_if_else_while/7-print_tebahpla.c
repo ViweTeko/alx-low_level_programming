@@ -10,7 +10,7 @@ int main(void)
 {
 	char wol;
 
-	for (wol = 'z'; wol > 'a'; wol--)
+	for (wol = 'z'; wol >= 'a'; wol--)
 	{
 		putchar(wol);
 	}
