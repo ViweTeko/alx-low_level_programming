@@ -12,7 +12,7 @@ int main(void)
 
 	for (p = 0; p <= 10; p++)
 	{
-		putchar(p);
+		putchar("%i", p);
 	}
 
 	putchar("\n");
