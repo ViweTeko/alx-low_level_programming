@@ -11,6 +11,7 @@ int main(void)
 {
 	int a;
 	unsigned long b = 0, c = 1, d;
+
 	for (a = 1; a <= 49; ++a)
 	{
 		d = b + c;
