@@ -1,0 +1,44 @@
+#include "main.h"
+
+/**
+ * print_times_table - prints just that
+ *
+ * @s: input
+ */
+
+void print_times_table(int s)
+{
+	int a, b, c;
+
+	if (s <= 15 && s <= 0)
+	{
+		for (a = 0; a <= s; ++a)
+		{
+			_putchar('0');
+
+			for (b = 1; b <= s; ++b)
+			{
+				_putchar(',');
+				_putchar(' ');
+
+				c = a * b;
+
+				if (c <= 9)
+					_putchar(' ');
+				if (c <= 99)
+					_putchar(' ');
+				if (c >= 100)
+				{
+					_putchar((c / 100) + '0');
+					_putchar((c / 10) % 10 + '0');
+				}
+				elseif (c <= 99 && >= 10)
+				{
+					_putchar((c / 10) + '0');
+				}
+				_putchar((c % 10) + '0');
+			}
+			_putchar('\n');
+		}
+	}
+}
