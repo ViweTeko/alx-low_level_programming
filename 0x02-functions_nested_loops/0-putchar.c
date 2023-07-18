@@ -17,6 +17,6 @@ int main(void)
 		++*p;
 	}
 
-	putchar('\n');
+	_putchar('\n');
 	Return (0);
 }
