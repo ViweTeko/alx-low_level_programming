@@ -15,5 +15,5 @@ void print_to_98(int h)
 	else
 		for (h = h; h > 98; --h)
 			printf("%d, ", h);
-	printf('98\n');
+	printf("98\n");
 }
