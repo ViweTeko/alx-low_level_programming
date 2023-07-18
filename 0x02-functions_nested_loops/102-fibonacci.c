@@ -10,7 +10,7 @@
 int main(void)
 {
 	int a;
-	unsigned long int b = 0, c = 1, d;
+	unsigned long b = 0, c = 1, d;
 	for (a = 1; a <= 49; ++a)
 	{
 		d = b + c;
