@@ -16,7 +16,7 @@ int main(void)
 		e = a + b;
 		a = b;
 		b = e;
-		printf("%lu\n", e);
+		printf("%lu ", e);
 	}
 
 	f = a % 1000;
@@ -38,6 +38,7 @@ int main(void)
 		if (d < 98)
 		{
 			_putchar(',');
+			_putchar(' ');
 		}
 		++d;
 	}
