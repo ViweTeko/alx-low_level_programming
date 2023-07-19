@@ -3,20 +3,37 @@
 /**
  * print_times_table - prints just that
  *
- * @s: input
+ * @n: input
  */
 
-void print_times_table(int s)
+void print_times_table(int n)
 {
-	int a, b;
+	int x, y, z;
 
-	if (s > 15 || s < 0)
+	if (n <= 15 && n >= 0)
 	{
-		for (a = 0; a <= s; ++a)
+		for (z = 0; z <= n; ++z)
 		{
-			for (b = 0; b <= s; ++b)
+			_putchar(48);
+			for (y = 1; y <= n; ++y)
 			{
-				_putchar('0' + a * b);
+				_putchar(',');
+				_putchar(' ');
+
+				x = z * y;
+
+				if (x <= 9)
+					_putchar(' ');
+				if (x <= 99)
+					_putchar(' ');
+
+				if (x >= 100)
+				{
+					_putchar((x / 100) + 48);
+					_putchar((x / 10) % 10 + 48);
+				} else if (x <= 99 && x >= 10)
+					_putchar((x / 10) + 48);
+				_putchar((x % 10) + 48);
 			}
 			_putchar('\n');
 		}
