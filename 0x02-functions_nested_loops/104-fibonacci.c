@@ -16,7 +16,7 @@ int main(void)
 		e = a + b;
 		a = b;
 		b = e;
-		printf("%lu ", e);
+		printf("%lu, ", e);
 	}
 
 	f = a % 1000;
