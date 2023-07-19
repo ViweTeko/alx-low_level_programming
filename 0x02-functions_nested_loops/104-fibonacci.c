@@ -28,7 +28,7 @@ int main(void)
 	{
 		h = (f + g) / c;
 		i = (f + g) * c;
-		e = (a + b) * h;
+		e = (a + b) + h;
 		a = b;
 		b = e;
 		f = g;
