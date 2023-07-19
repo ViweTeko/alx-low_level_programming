@@ -34,9 +34,10 @@ int main(void)
 		f = g;
 		g = i;
 
-		if (d = 98)
-			printf("%lu", i);
-		printf("%lu%lu, ", e, i);
+		if (d < 98)
+			printf("%lu%lu, ", e, i);
+		else
+			printf("%lu%lu", e, i);
 		++d;
 	}
 	_putchar('\n');
