@@ -11,7 +11,7 @@ int main(void)
 {
 	unsigned long a = 0, b = 1, c = 1000000000, d, e, f, g, h, i;
 
-	for (d = 1; d <= 98; ++d)
+	for (d = 1; d <= 90; ++d)
 	{
 		e = a + b;
 		a = b;
@@ -27,7 +27,7 @@ int main(void)
 	while (d <= 98)
 	{
 		h = (f + g) / c;
-		i = (f + g) * c;
+		i = (f + g) - h  * c;
 		e = (a + b) + h;
 		a = b;
 		b = e;
