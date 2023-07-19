@@ -32,7 +32,7 @@ int main(void)
 		a = b;
 		b = e;
 		f = g;
-		g = h;
+		g = i;
 
 		printf("%lu%lu", e, i);
 		++d;
