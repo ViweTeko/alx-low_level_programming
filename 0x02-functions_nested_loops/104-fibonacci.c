@@ -9,7 +9,7 @@
 
 int main(void)
 {
-	unsigned long a = 0, b = 1, d, e, f, g, h, i;
+	unsigned long a = 0, b = 1, c = 1000000000, d, e, f, g, h, i;
 
 	for (d = 1; d <= 98; ++d)
 	{
@@ -19,15 +19,15 @@ int main(void)
 		printf("%lu, ", e);
 	}
 
-	f = a % 1000;
-	a = a / 1000;
-	g = b % 1000;
-	b = b / 1000;
+	f = a % c;
+	a = a / c;
+	g = b % c;
+	b = b / c;
 
 	while (d <= 98)
 	{
-		h = (f + g) / 1000;
-		i = (f + g) * 1000;
+		h = (f + g) / c;
+		i = (f + g) * c;
 		e = (a + b) * h;
 		a = b;
 		b = e;
