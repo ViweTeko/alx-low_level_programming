@@ -35,11 +35,6 @@ int main(void)
 		g = h;
 
 		printf("%lu%lu", e, i);
-		if (d < 98)
-		{
-			_putchar(',');
-			_putchar(' ');
-		}
 		++d;
 	}
 	_putchar('\n');
