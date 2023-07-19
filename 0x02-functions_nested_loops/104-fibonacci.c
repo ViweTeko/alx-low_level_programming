@@ -37,7 +37,7 @@ int main(void)
 		if (d < 98)
 			printf("%lu%lu, ", e, i);
 		else
-			printf("%lu%lu", e, i);
+			printf("%lu", i);
 		++d;
 	}
 	_putchar('\n');
