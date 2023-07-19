@@ -34,7 +34,7 @@ int main(void)
 		f = g;
 		g = i;
 
-		printf("%lu%lu", e, i);
+		printf("%lu%lu, ", e, i);
 		++d;
 	}
 	_putchar('\n');
