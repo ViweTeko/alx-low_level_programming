@@ -11,12 +11,14 @@ int main(void)
 {
 	unsigned long a = 0, b = 1, c = 1000000000, d, e, f, g, h, i;
 
+	printf("%lu", b);
+
 	for (d = 1; d <= 90; ++d)
 	{
 		e = a + b;
 		a = b;
 		b = e;
-		printf("%lu, ", e);
+		printf(", %lu", e);
 	}
 
 	f = a % c;
@@ -35,9 +37,9 @@ int main(void)
 		g = i;
 
 		if (d < 98)
-			printf("%lu%lu, ", e, i);
+			printf(", %lu%lu", e, i);
 		else
-			printf("%lu", i);
+			printf(", %lu%lu", e, i);
 		++d;
 	}
 	_putchar('\n');
