@@ -11,7 +11,7 @@ int main(void)
 {
 	unsigned long a = 0, b = 1, d, e, f, g, h, i;
 
-	for (d = 1; d <= 90; ++d)
+	for (d = 1; d <= 98; ++d)
 	{
 		e = a + b;
 		a = b;
