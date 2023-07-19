@@ -16,7 +16,7 @@ int main(void)
 		e = a + b;
 		a = b;
 		b = e;
-		if (b = 1)
+		if (b == 1)
 			printf("%lu", e);
 		else
 			printf(", %lu", e);
