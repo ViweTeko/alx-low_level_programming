@@ -37,8 +37,7 @@ int main(void)
 		printf("%lu%lu", e, i);
 		if (d < 98)
 		{
-			_putchar(',');
-			_putchar(' ');
+			printf("%,lu\n");
 		}
 		++d;
 	}
