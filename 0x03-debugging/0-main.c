@@ -8,7 +8,7 @@
 
 int main(void)
 {
-	int q = 0;
+	int q = 98 % 2;
 
 	positive_or_negative(q);
 
