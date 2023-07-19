@@ -34,6 +34,8 @@ int main(void)
 		f = g;
 		g = i;
 
+		if (d = 98)
+			printf("%lu", i);
 		printf("%lu%lu, ", e, i);
 		++d;
 	}
