@@ -13,7 +13,7 @@ int main(void)
 
 	printf("%lu", b);
 
-	for (d = 1; d <= 90; ++d)
+	for (d = 0; d <= 90; ++d)
 	{
 		e = a + b;
 		a = b;
