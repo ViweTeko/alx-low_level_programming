@@ -1,7 +1,7 @@
 #include "main.h"
 
 /**
- * _atoic - converts str to int
+ * _atoi - converts str to int
  *
  * @s: input character
  *
