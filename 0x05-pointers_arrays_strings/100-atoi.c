@@ -8,7 +8,7 @@
  * Return: 0 if no number appears
  */
 
-int _atoic(char *s)
+int _atoi(char *s)
 {
 	int k, l = 1, m = 0;
 
