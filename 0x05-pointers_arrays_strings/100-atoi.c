@@ -10,24 +10,20 @@
 
 void _atoic(char *s)
 {
-	int k = 0, l = 1, m = 0;
+	int k, l = 1, m = 0;
 
-	while (s[k] == ' ')
-		++k;
-
-	if (s[k] == '-')
+	for (k = 0; s[k] != '\0' && !(s[k] >= '0' && s[k] <= '9'); ++k)
 	{
-		l = -1;
-		++k;
+		if (s[k] == '-')
+			l *= -1;
 	}
-	else if (s[k] == '+')
-		++k;
-
-	while (s[k] >= '0' && s[k] <= '9')
+	
+	for (k = 0; s[k] != 0; ++k)
 	{
-		m *= 10;
-		m += s[k] - '0';
-		++k;
-	}
-	return (m * l);
+		if (s[k] >= '0' && s[k] <= '9')
+			m = m * 10 + l * (s[k] - '0');
+
+		if (m != 0 && !(s[k] >= '0' && s[k] <= '9'))
+				return (m);
+	return (m);
 }
