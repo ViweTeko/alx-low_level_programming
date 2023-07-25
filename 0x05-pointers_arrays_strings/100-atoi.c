@@ -8,7 +8,7 @@
  * Return: 0 if no number appears
  */
 
-void _atoic(char *s)
+int _atoic(char *s)
 {
 	int k, l = 1, m = 0;
 
