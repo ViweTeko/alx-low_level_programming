@@ -17,14 +17,14 @@ int _atoi(char *s)
 		if (s[k] == '-')
 			l *= -1;
 	}
-	
+
 	for (k = 0; s[k] != 0; ++k)
 	{
 		if (s[k] >= '0' && s[k] <= '9')
 			m = m * 10 + l * (s[k] - '0');
 
 		if (m != 0 && !(s[k] >= '0' && s[k] <= '9'))
-				return (m);
+			return (m);
 	}
 	return (m);
 }
