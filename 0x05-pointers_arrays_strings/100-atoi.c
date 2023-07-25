@@ -25,5 +25,6 @@ void _atoic(char *s)
 
 		if (m != 0 && !(s[k] >= '0' && s[k] <= '9'))
 				return (m);
+	}
 	return (m);
 }
