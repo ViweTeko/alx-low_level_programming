@@ -6,6 +6,8 @@
  * @dest: destination for input
  * @src: source input
  * @n: the integer
+ *
+ * Return: dest
  */
 
 char *_strncpy(char *dest, char *src, int n)
