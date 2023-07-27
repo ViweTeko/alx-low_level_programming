@@ -5,6 +5,8 @@
  *
  * @dest: the string that will include appended string
  * @src: the string that will append to dest
+ *
+ * Return: dest
  */
 
 char *_strcat(char *dest, char *src)

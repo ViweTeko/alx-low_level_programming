@@ -6,6 +6,8 @@
  * @dest: destination string
  * @src: string that will be concatonated
  * @n: the integer
+ *
+ * Return: dest
  */
 
 char *_strncat(char *dest, char *src, int n)
