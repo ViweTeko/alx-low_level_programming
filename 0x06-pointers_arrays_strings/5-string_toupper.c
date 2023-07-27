@@ -4,6 +4,8 @@
  * string_toupper - converts string to uppercase
  *
  * @a: character string
+ *
+ * Return: a
  */
 
 char *string_toupper(char *a)
