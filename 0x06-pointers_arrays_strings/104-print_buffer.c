@@ -12,7 +12,7 @@
 
 void print_buffer(char *b, int size)
 {
-	int k = 0, l, m;
+	int k = 0, l, m, n;
 
 	if (size <= 0)
 	{
@@ -44,7 +44,7 @@ void print_buffer(char *b, int size)
 				n = '.';
 			printf("%c", n);
 		}
-		printf('\n');
+		printf("\n");
 		k += 10;
 	}
 }
