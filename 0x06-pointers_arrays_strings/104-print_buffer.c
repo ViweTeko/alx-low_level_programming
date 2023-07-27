@@ -7,7 +7,7 @@
  * @b: buffer pointer
  * @size: the content size
  *
- * Return: 0
+ * Return: void
  */
 
 void print_buffer(char *b, int size)
