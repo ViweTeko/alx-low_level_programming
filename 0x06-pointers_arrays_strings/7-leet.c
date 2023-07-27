@@ -4,6 +4,8 @@
  * leet - convert to string
  *
  * @a: input value
+ *
+ * Return: a
  */
 
 char *leet(char *a)
