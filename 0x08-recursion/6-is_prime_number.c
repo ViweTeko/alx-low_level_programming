@@ -31,5 +31,5 @@ int is_prime_number(int n)
 	if (n < 2)
 		return (0);
 
-	return (_prime(a, 2));
+	return (_prime(n, 2));
 }	
