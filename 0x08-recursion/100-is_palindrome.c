@@ -19,7 +19,7 @@ int pcheck(char *s, int t, int u)
 	if (s[u] != s[t])
 		return (0);
 
-	return (pcheck(s, a - 1, u + 1);
+	return (pcheck(s, a - 1, u + 1));
 }
 
 /**
