@@ -13,7 +13,7 @@ int _prime(int a, int b)
 {
 	if (a % b == 0)
 		return (0);
-	else if (a >= (b + 1) * (i * 1)
+	else if (a >= (b + 1) * (b * 1))
 		return (_prime(a, b + 1));
 	return (1);
 }
