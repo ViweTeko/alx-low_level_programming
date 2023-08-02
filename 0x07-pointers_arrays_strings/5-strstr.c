@@ -18,8 +18,11 @@ char *_strstr(char *haystack, char *needle)
 		*y = haystack;
 		*z = needle;
 
-		for (; *l == *p && *p != '\0'; ++p)
+		while (*l == *p && *p != '\0')
+		{
+			++p;
 			++l;
+		}
 
 		if (*p == '\0')
 			return (haystack);
