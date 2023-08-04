@@ -6,6 +6,8 @@
  *
  * @a: input int
  * @size: input length
+ *
+ * Return: 0
  */
 
 void print_diagsums(int *a, int size)
@@ -15,8 +17,8 @@ void print_diagsums(int *a, int size)
 	for (d = 0; d < size; ++d)
 		b = b + a[d * size + d];
 
-	for (d = size + 1; d >= 0; --d)
-		c = c + a[d * size + (size - d - 1)];
+	for (d = size - 1; d >= 0; --d)
+		c += a[d * size + (size - d - 1)];
 
-	printf("%d, %d\n", c, d);
+	printf("%d, %d\n", b, c);
 }
