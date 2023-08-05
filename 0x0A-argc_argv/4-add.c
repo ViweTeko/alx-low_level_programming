@@ -33,7 +33,7 @@ int main(int argc, char *argv[])
 {
 	int w = 0, x;
 
-	for (x = 0; x < argc; ++x)
+	for (x = 1; x < argc; ++x)
 	{
 		if (is_num(argv[x]) == 0)
 		{
