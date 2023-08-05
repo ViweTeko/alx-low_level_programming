@@ -35,19 +35,19 @@ int main(int argc, char *argv[])
 
 	for (x = 0; x < argc; ++x)
 	{
-		if (is_num(argv[x] == 0))
+		if (is_num(argv[x]) == 0)
 		{
 			printf("Error\n");
 			return (1);
 		}
 
-		if (atoi(argv[x] <= 0))
+		if (atoi(argv[x]) <= 0)
 		{
 			printf("Error\n");
 			return (1);
 		}
 
-		w = += atoi(argv[x]);
+		w += atoi(argv[x]);
 	}
 	printf("%d\n", w);
 		return (0);
