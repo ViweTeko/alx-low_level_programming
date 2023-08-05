@@ -3,8 +3,8 @@
 /**
  * main - prints program name
  *
- * @argc - argument counter
- * @argv - argument input
+ * @argc: argument counter
+ * @argv: argument input
  *
  * Return: 0
  */
