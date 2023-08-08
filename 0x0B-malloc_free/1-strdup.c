@@ -6,7 +6,7 @@
  *
  * @str: copy of string
  *
- * Return: 0 or NULL
+ * Return: m or NULL
  */
 
 char *_strdup(char *str)
@@ -16,10 +16,11 @@ char *_strdup(char *str)
 
 	if (str == NULL)
 		return (NULL);
-	for (n = 0; str[n] != '\0'; ++n)
-		str[n];
+	n = 0;
+	while (str[n] != '\0')
+			++n;
 
-	m = mallac(size(char) * (n + 1));
+	m = malloc(sizeof(char) * (n + 1));
 
 	if (m == NULL)
 		return (NULL);
