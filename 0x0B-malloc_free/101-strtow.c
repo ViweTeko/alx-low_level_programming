@@ -64,9 +64,9 @@ char **strtow(char *str)
 				++f;
 				i = 0;
 			}
+			else if (++i == 0)
+				j = e;
 		}
-		else if (++i == 0)
-			j = e;
 	}
 
 	word[f] = NULL;
