@@ -32,7 +32,7 @@ int counting(char *a)
  * Return: word
  */
 
-char **strtow(char * str)
+char **strtow(char *str)
 {
 	char **word, *txt;
 	int e, f = 0, g = 0, h, i = 0, j, k;
