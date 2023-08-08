@@ -12,8 +12,8 @@
 
 char *str_concat(char *s1, char *s2)
 {
-	char s3;
-	int t, u;
+	char *s3;
+	int t = 0, u = 0;
 
 	if (s1 == NULL)
 		s1 = "";
@@ -21,10 +21,11 @@ char *str_concat(char *s1, char *s2)
 	if (s2 == NULL)
 		s2 = "";
 
-	for (t = 0; s1[t] != '\0'; ++t)
-		s1[t];
-	for (u = 0; s2[u] != '\0'; ++u)
-		s2[u];
+	while (s1[t] != '\0')
+		++t;
+
+	while (s2[u] != '\0')
+			++u;
 
 	s3 = malloc(sizeof(char) * (t + u + 1));
 
