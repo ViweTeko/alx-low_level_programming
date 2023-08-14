@@ -6,19 +6,16 @@
  * @name: dogs name
  * @owner: owners name
  * @age: dogs age
- *
- * Return: dog
  */
 struct dog
 {
-	char *name, *owner;
+	char *name;
 	float age;
+	char *owner;
 };
 
 /**
  * dog_t - dog typedef
- *
- * Return: 0
  */
 
 typedef struct dog dog_t;
