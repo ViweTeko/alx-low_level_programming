@@ -22,14 +22,14 @@ int main(int argc, char *argv[])
 		exit(1);
 	}
 
-	b = atoi(1[argv]);
+	b = atoi(argv[1]);
 	if (b < 0)
 	{
 		printf("Eror\n");
 		exit(2);
 	}
 
-	for (c = 0; c < b; ++c)
+	for (c = 0; c < b; c++)
 	{
 		printf("%02x", d[c] & 0xFF);
 		if (c != b - 1)
