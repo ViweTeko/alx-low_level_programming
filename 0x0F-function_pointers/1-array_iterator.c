@@ -11,7 +11,7 @@
 
 void array_iterator(int *array, size_t size, void (*action)(int))
 {
-	int z;
+	unsigned int z;
 
 	if (array == NULL || action == NULL)
 		return;
