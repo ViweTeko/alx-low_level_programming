@@ -4,19 +4,8 @@
 #include "3-calc.h"
 
 /**
- * main - prints simple operations
+ * main - performs simple operations
  *
- * @argc: argument counter
- * @argv: argument
- *
- * Return: 0
- */
-
-#include "3-calc.h"
-#include <stdio.h>
-#include <stdlib.h>
-/**
- * main - calculates simple operations
  * @argc: arguments
  * @argv: double pointer to arguments
  * Return: 0
