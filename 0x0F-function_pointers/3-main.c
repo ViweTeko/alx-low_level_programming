@@ -16,11 +16,11 @@
 #include <stdio.h>
 #include <stdlib.h>
 /**
- *  * main - calculates simple operations
+ * main - calculates simple operations
  * @argc: arguments
  * @argv: double pointer to arguments
  * Return: 0
- * */
+ */
 int main(int argc, char *argv[])
 {
 	int one, two, ans;
