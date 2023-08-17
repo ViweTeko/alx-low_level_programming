@@ -12,7 +12,7 @@ void print_all(const char * const format, ...)
 	va_list pa;
 	int a = 0, b = 0;
 	char *c = "";
-	_print p[] = {
+	tp p[] = {
 		{"c", print_char},
 		{"i", print_int},
 		{"f", print_float},
@@ -28,8 +28,8 @@ void print_all(const char * const format, ...)
 			++b;
 		if (b < 4)
 		{
-			printf("s", c);
-			p[b].tp(pa);
+			printf("%s", c);
+			p[b].pr(pa);
 			c =  ", ";
 		}
 		++b;
