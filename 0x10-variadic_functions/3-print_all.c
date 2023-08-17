@@ -1,7 +1,4 @@
 #include "variadic_functions.h"
-#include <stdarg.h>
-#include <stdio.h>
-#include <stdlib.h>
 
 /**
  * print_all - prints anything
@@ -37,4 +34,65 @@ void print_all(const char * const format, ...)
 	printf("\n");
 
 	va_end(pa);
+}
+
+/**
+ * print_char - print a char
+ * @arg: argument
+ *
+ * Return: nothing
+ */
+
+void print_char(va_list arg)
+{
+	char a = va_arg(arg, int);
+
+	printf("%c", a);
+}
+
+/**
+ * print_int - print an integer
+ * @arg: argument
+ *
+ * Return: nothing
+ */
+
+void print_int(va_list arg)
+{
+	int a = va_arg(arg, int);
+
+	printf("%d", a);
+}
+
+/**
+ * print_float - print a float
+ * @arg: argument
+ *
+ * Return: nothing
+ */
+
+void print_float(va_list arg)
+{
+	float a = va_arg(arg, double);
+
+	printf("%f", a);
+}
+
+/**
+ * print_string - print a string
+ * @arg: argument
+ *
+ * Return: nothing
+ */
+
+void print_string(va_list arg)
+{
+	char *a = va_arg(arg, char *);
+
+	if (a == NULL)
+	{
+		printf("(nil)");
+		return;
+	}
+	printf("%s", a);
 }
