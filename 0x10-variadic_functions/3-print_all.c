@@ -29,7 +29,7 @@ void print_all(const char * const format, ...)
 			p[b].pr(pa);
 			c =  ", ";
 		}
-		++b;
+		++a;
 	}
 	printf("\n");
 
