@@ -20,7 +20,7 @@ list_t *add_node(list_t **head, const char *str)
 	if (str == NULL)
 		return (0);
 
-	_len = 0;
+	length = 0;
 	while (str[length] != '\0')
 		length++;
 	viwe->str = strdup(str);
