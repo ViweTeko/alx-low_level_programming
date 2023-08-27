@@ -24,7 +24,7 @@ list_t *add_node(list_t **head, const char *str)
 	while (str[length] != '\0')
 		length++;
 	viwe->str = strdup(str);
-	viwe->len = length(str);
+	viwe->len = length;
 	viwe->next = *head;
 
 	*head = viwe;
