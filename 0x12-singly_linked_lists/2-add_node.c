@@ -12,7 +12,7 @@
 list_t *add_node(list_t **head, const char *str)
 {
 	list_t *viwe;
-	int _len;
+	unsigned int length;
 
 	viwe = malloc(sizeof(list_t));
 	if (viwe == NULL)
@@ -21,13 +21,13 @@ list_t *add_node(list_t **head, const char *str)
 		return (0);
 
 	_len = 0;
-	while (str[_len] != '\0')
-		_len++;
+	while (str[length] != '\0')
+		length++;
 	viwe->str = strdup(str);
-	viwe->len = _len(str);
+	viwe->len = length(str);
 	viwe->next = *head;
 
-	*head = new;
+	*head = viwe;
 
-	return (new);
+	return (*head);
 }
