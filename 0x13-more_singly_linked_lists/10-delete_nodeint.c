@@ -6,7 +6,7 @@
  * @index: place to be delteted
  * @n: number of nodes
  *
- * Return: index or NULL
+ * Return: 1 (Success) or -1( NULL)
  */
 
 int delete_nodeint_at_index(listint_t **head, unsigned int index)
@@ -14,36 +14,26 @@ int delete_nodeint_at_index(listint_t **head, unsigned int index)
 	listint_t *a, *b;
 	unsigned int c;
 
+	b = *head;
 	if (head == NULL || b == NULL)
-		return (NULL);
-
-	b = malloc(sizeof(listint_t));
-	b->n = n;
-	b->next = NULL;
+		return (-1);
 	if (index == 0)
 	{
-		b->next = *head;
-		*head = b;
-		return (*head);
+		a = b->next;
+		free(b);
+		*head = a;
+		return (1);
 	}
-	b->next = (*head)->next;
-	a = *head;
 	for (c = 0; c < index; ++c)
 	{
-		a = a->next;
-		if (a == NULL)
-		{
-			free(b);
-			return (NULL);
-		}
-		b->next = a->next;
-		if (c != index - 1 && b->next == NULL)
-		{
-			free(b);
-			return (NULL);
-		}
+		if (b == NULL)
+			return (-1);
+		a = b;
+		b = b->next;
 	}
 	b->next = a->next;
-	a->next = b;
-	return (b);
+	free(b);
+	if (index == 0)
+		head = &a;
+	return (1);
 }

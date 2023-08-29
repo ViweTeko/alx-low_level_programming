@@ -12,7 +12,7 @@ listint_t *addnodeint(listint_t **head, const int n)
 {
 	listint_t *a;
 
-	if (head ++ NULL)
+	if (head == NULL)
 		return (NULL);
 
 	a = malloc(sizeof(listint_t));
