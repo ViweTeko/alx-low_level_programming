@@ -16,7 +16,7 @@ int append_text_to_file(const char *filename, char *text_content)
 		return (-1);
 	if (text_content != NULL)
 	{
-		while (text_content[ln] != NULL)
+		while (text_content[ln])
 			++ln;
 	}
 	a = open(filename, O_RDONLY | O_APPEND);
