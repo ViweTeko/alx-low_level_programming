@@ -20,8 +20,8 @@ int create_file(const char *filename, char *text_content)
 			++ln;
 	}
 
-	fn = open(filename, 0_CREAT | 0_RDWR | 0_TRUNC, 0600);
-	wr write(fn, text_content, ln);
+	fn = open(filename, O_CREAT | O_RDWR | O_TRUNC, 0600);
+	wr = write(fn, text_content, ln);
 	if (fn == -1 || wr == -1)
 		return (-1);
 	close(fn);
