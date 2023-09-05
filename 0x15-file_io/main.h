@@ -44,7 +44,7 @@ void closure(int a)
 	int b;
 
 	b = close(a);
-	if (a == -1)
+	if (b == -1)
 	{
 		dprintf(STDERR_FILENO, "Error: Can't close fd %d\n", a);
 		exit(100);
