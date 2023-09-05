@@ -47,3 +47,39 @@ int main(int argc, char *argv[])
 
 	return (0);
 }
+
+/**
+ * a_buffer - allocates memory for a buffer
+ * @a: nmae of buffer
+ *
+ * Return: a
+ */
+char *a_buffer(char *a)
+{
+	char *b;
+
+	b = malloc(sizeof(char) * 1024);
+	if (b == NULL)
+	{
+		dprintf(STDERR_FILENO, "Error: Can't write to %s\n", a);
+		exit(99);
+	}
+
+	return (b);
+}
+
+/**
+ * closure - closes the file
+ * @a: file to be closed
+ */
+void closure(int a)
+{
+	int b;
+
+	b = close(a);
+	if (b == -1)
+	{
+		dprintf(STDERR_FILENO, "Error: Can't close fd %d\n", a);
+		exit(100);
+	}
+}
