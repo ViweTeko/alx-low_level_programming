@@ -38,7 +38,7 @@ int main(int argc, char *argv[])
 			exit(99);
 		}
 		rd = read(b, a, 1024);
-		c = open(argv[2], O_RDONLY | O_APPEND);
+		c = open(argv[2], O_WRONLY | O_APPEND);
 	} while (rd > 0);
 
 	free(a);
