@@ -12,13 +12,13 @@ void print_entry(unsigned long int b, unsigned char *a);
 void close_elf(int elf);
 
 /**
- * main - Displays the information contained in the
- * ELF header at the start of an ELF file.
- * @argc: The number of arguments supplied to the program.
- * @argv: An array of pointers to the arguments.
+ * main - Displays the information contained ELF file.
+ * @argc: number of arguments
+ * @argv: Argument vector
  *
  * Return: 0
  */
+
 int main(int __attribute__((__unused__)) argc, char *argv[])
 {
 	Elf64_Ehdr *header;
@@ -74,7 +74,7 @@ void check_elf(unsigned char *a)
 
 	for (z = 0; z < 4; ++z)
 	{
-		if ([z] != 127 && a[z] != 'E' &&
+		if (a[z] != 127 && a[z] != 'E' &&
 				a[z] != 'L' && a[z] != 'F')
 		{
 			dprintf(STDERR_FILENO, "Error: Not an ELF file\n");
@@ -104,7 +104,7 @@ void close_elf(int elf)
 
 void print_abi(unsigned char *a)
 {
-	printf("  ABI Version:                       %d\n", a[A_ABIVERSION]);
+	printf("  ABI Version:                       %d\n", a[EI_ABIVERSION]);
 }
 
 /**
@@ -115,7 +115,7 @@ void print_abi(unsigned char *a)
 void print_osabi(unsigned char *a)
 {
 	printf("  OS/ABI:                            ");
-	switch (a[A_OSABI])
+	switch (a[EI_OSABI])
 	{
 		case ELFOSABI_NONE:
 			printf("Unix - System V\n");
@@ -148,7 +148,7 @@ void print_osabi(unsigned char *a)
 			printf("Standalone App\n");
 			break;
 		default:
-			printf("<unknown: %x>\n", a[A_OSABI]);
+			printf("<unknown: %x>\n", a[EI_OSABI]);
 	}
 }
 
@@ -160,25 +160,25 @@ void print_osabi(unsigned char *a)
 
 void print_type(unsigned int b, unsigned char *a)
 {
-	if (a[A_DATA] == ELFDATA2MSB)
+	if (a[EI_DATA] == ELFDATA2MSB)
 		b >>= 8;
 	printf("  Type:                              ");
 
 	switch (b)
 	{
-		case B_NONE:
+		case EV_NONE:
 			printf("NONE (None)\n");
 			break;
-		case B_REL:
+		case DT_REL:
 			printf("REL (Relocatable file)\n");
 			break;
-		case B_DYN:
+		case ET_DYN:
 			printf("DYN (Shared object file)\n");
 			break;
-		case B_CORE:
+		case ET_CORE:
 			printf("CORE (Core file)\n");
 			break;
-		case B_EXEC:
+		case ET_EXEC:
 			printf("EXEC (Executable file)\n");
 			break;
 		default:
@@ -194,7 +194,7 @@ void print_type(unsigned int b, unsigned char *a)
 void print_data(unsigned char *a)
 {
 	printf("  Data:                              ");
-	switch (a[A_DATA])
+	switch (a[EI_DATA])
 	{
 		case ELFDATANONE:
 			printf("none\n");
@@ -206,7 +206,7 @@ void print_data(unsigned char *a)
 			printf("2's complement, big endian\n");
 			break;
 		default:
-			printf("<unknown: %x>\n", a[A_CLASS]);
+			printf("<unknown: %x>\n", a[EI_CLASS]);
 	}
 }
 
@@ -218,7 +218,7 @@ void print_data(unsigned char *a)
 void print_class(unsigned char *a)
 {
 	printf("  Class:                             ");
-	switch (a[A_CLASS])
+	switch (a[EI_CLASS])
 	{
 		case ELFCLASSNONE:
 			printf("none\n");
@@ -230,7 +230,7 @@ void print_class(unsigned char *a)
 			printf("ELF64\n");
 			break;
 		default:
-			printf("<unknown: %x>\n");
+			printf("<unknown: %x>\n", a[EI_CLASS]);
 	}
 }
 
@@ -244,10 +244,10 @@ void print_magic(unsigned char *a)
 	int z;
 
 	printf("  Magic:   ");
-	for (z = 0; z < A_NIDENT; ++z)
+	for (z = 0; z < EI_NIDENT; ++z)
 	{
 		printf("%02x", a[z]);
-		if (z == A_NIDENT - 1)
+		if (z == EI_NIDENT - 1)
 			printf("\n");
 		else
 			printf(" ");
@@ -261,10 +261,10 @@ void print_magic(unsigned char *a)
 
 void print_version(unsigned char *a)
 {
-	printf("  Version:                           %d", a[A_VERSION]);
-	switch (a[A_VERSION])
+	printf("  Version:                           %d", a[EI_VERSION]);
+	switch (a[EI_VERSION])
 	{
-		case AV_CURRENT:
+		case EV_CURRENT:
 			printf("  (current)\n");
 			break;
 		default:
@@ -282,12 +282,12 @@ void print_version(unsigned char *a)
 void print_entry(unsigned long int b, unsigned char *a)
 {
 	printf("  Entry point address:               ");
-	if (a[A_DATA] == ELFDATA2MSB)
+	if (a[EI_DATA] == ELFDATA2MSB)
 	{
 		b = ((b << 8) & 0xFF00FF00) | ((b >> 8) & 0xFF00FF);
 		b = (b << 16) | (b >> 16);
 	}
-	if (b[A_CLASS] == ELFCLASS32)
+	if (a[EI_CLASS] == ELFCLASS32)
 		printf("%#x\n", (unsigned int)b);
 	else
 		printf("%#lx\n", b);
