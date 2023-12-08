@@ -33,7 +33,7 @@ dlistint_t *insert_dnodeint_at_index(dlistint_t **h, unsigned int idx, int n)
 	}
 	while (tmp != NULL)
 	{
-		if (i == idx - 1)
+		if (a == idx - 1)
 		{
 			new = malloc(sizeof(dlistint_t));
 			if (new == NULL)
