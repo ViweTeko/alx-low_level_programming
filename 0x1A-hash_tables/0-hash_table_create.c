@@ -10,9 +10,9 @@
 hash_table_t *hash_table_create(insigned long int size)
 {
 	hash_table_t *created;
-	unsigned long iont a;
+	unsigned long int a;
 
-	created = malloc(sizeof(hash_table_+t));
+	created = malloc(sizeof(hash_table_t));
 
 	if (created == NULL)
 		return (NULL);
