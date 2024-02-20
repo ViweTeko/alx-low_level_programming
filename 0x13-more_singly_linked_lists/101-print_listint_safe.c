@@ -9,21 +9,35 @@
 
 size_t print_listint_safe(const listint_t *head)
 {
-	long int z;
-	size_t a;
+	lisp *z, *y, *x;
+	size_t a = 0;
 
-	for (a = 0; head != NULL; ++a)
+	z = NULL;
+	while (head != NULL)
 	{
-		z = head - head->next;
-		printf("[%p] %d\n", (void *)head, head->n);
-		if (z > 0)
-			head = head->next;
-		else
+		new = malloc(sizeof(lisp));
+
+		if (new == NULL)
+			exit(98);
+		new->p = (void *)head;
+		new->next = z;
+		z = new;
+
+		x = z;
+		while (x->next != NULL)
 		{
-			printf("-> [%p] %d\n", (void *)head->next, head->next->n);
-			break;
+			x = x->next;
+			if (head == x->p)
+			{
+				printf("-> [%p] %d\n", (void *)head, head->n);
+				freed(&z);
+				return (a);
+			}
 		}
+		printf("[%p] %d\n", (void *)head, head->n);
+		head = head->next;
+		a++;
 	}
+	freed(&a);
 	return (z);
 }
-

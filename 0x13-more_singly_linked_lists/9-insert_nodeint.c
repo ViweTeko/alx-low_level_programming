@@ -1,7 +1,7 @@
 #include "lists.h"
 
 /**
- * insert_node_at_index - inserts node at given position
+ * insert_nodeint_at_index - inserts node at given position
  * @head: beginning of list
  * @idx: index
  * @n: number of elements
@@ -9,7 +9,7 @@
  * Return: idx or NULL
  */
 
-listint_t *insert_node_at_index(listint_t **head, unsigned int idx, int n)
+listint_t *insert_nodeint_at_index(listint_t **head, unsigned int idx, int n)
 {
 	listint_t *a, *b;
 	unsigned int c;

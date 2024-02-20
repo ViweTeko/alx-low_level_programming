@@ -7,30 +7,42 @@
  * Return: h
  */
 
-size_t free_listint_ssafe(listint_t **h)
+size_t free_listint_safe(listint_t **h)
 {
-	size_t a;
-	listint_t *b;
-	int c;
+	size_t a = 0;
+	listint_t *curr;
+	lisp *z, *y, *x;
 
-	if (h == NULL || *h == NULL)
-		return (0);
-	for (a = 0; *h != NULL; ++a)
+	z= NULL;
+	while (*h != NULL)
 	{
-		c = *h - (*h)->next;
-		if (c > 0)
+		y = malloc(sizeof(lisp));
+		if (y == NULL)
+			exit(98);
+
+		y->p = (void *)*h;
+		y->next = z;
+		z = y;
+
+		x = z;
+
+		while (x->next != NULL)
 		{
-			b = (*h)->next;
-			free(*h);
-			*h = b;
+			x = x->next;
+			if (*h == x->p)
+			{
+				*h = NULL;
+				freed(&z);
+				return (a);
+			}
 		}
-		else
-		{
-			free(*h);
-			*h = NULL;
-			break;
-		}
+		curr = *h;
+		*h = (*h)->next;
+		free(curr);
+		a++;
 	}
 	*h = NULL;
+	freed(&z);
+
 	return (a);
 }
