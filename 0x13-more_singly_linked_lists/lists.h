@@ -32,7 +32,7 @@ typedef struct lisp_t
  * freed - frees linked list
  * @h: head of list
  */
-void freed(lisp **head)
+void freed(lisp **h)
 {
 	lisp *tmp, *curr;
 
