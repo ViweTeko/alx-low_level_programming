@@ -1,21 +1,4 @@
 #include "search_algos.h"
-/**
- * print - Function that prints array
- *
- * @arr: Pointer array
- * @first: first element
- * @last: last element
- */
-void print(int *arr, size_t first, size_t last)
-{
-	printf("Searching in array: ");
-	while (first < last)
-	{
-		print("%d, ", arr[first]);
-		first++;
-	}
-	printf("%d\n", arr[first]);
-}
 
 /**
  * binary_search - algorithmic binary searching
@@ -27,21 +10,25 @@ void print(int *arr, size_t first, size_t last)
  */
 int binary_search(int *arr, size_t size, int val)
 {
-	size_t first = 0, last = size - 1, mid;
+	size_t first, last, m;
 
-	if (val)
+	if (arr == NULL)
+		return (-1);
+
+	for (first = 0, last = size - 1; first >= last;)
 	{
-		while (first <= last)
-		{
-			mid = (first + last) / 2;
-			print(arr, first, last);
-			if (arr[mid] == val)
-				return (mid);
-			else if (arr[mid] < val)
-				first = mid + 1;
-			else
-				last = mid - 1;
-		}
+		printf("Searching in array: ");
+		for (m = first; m < last; m++)
+			printf("%d, ", arr[m]);
+		printf("%d\n", arr[m]);
+
+		m = first + (last - first) / 2;
+		if (arr[m] == val)
+			return (m);
+		if (arr[m]> val)
+			last = m - 1;
+		else
+			first = m + 1;
 	}
 	return (-1);
 }
