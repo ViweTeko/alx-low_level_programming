@@ -25,7 +25,7 @@ int binary_search(int *arr, size_t size, int val)
 		m = first + (last - first) / 2;
 		if (arr[m] == val)
 			return (m);
-		if (arr[m]> val)
+		if (arr[m] > val)
 			last = m - 1;
 		else
 			first = m + 1;
